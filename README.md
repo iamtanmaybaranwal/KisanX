@@ -216,5 +216,4 @@ cd ml
 Solar power · more zones and LoRa for large fields · fertiliser through the drip line
 (fertigation) · retraining on real data collected by the Pi.
 
----
-Made by [@iamtanmaybaranwal](https://github.com/iamtanmaybaranwal).
+
