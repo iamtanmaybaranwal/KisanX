@@ -1,4 +1,4 @@
-# KisanX — AI irrigation that thinks ahead
+# KisanX - Irrigation that thinks ahead
 
 **KisanX predicts when each part of a field will need water, and waters only that part,
 only as much as it needs.** If rain is coming, it waits. Everything runs on the farm
