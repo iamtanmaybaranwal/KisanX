@@ -1,0 +1,7 @@
+{
+  "name": "jal_core",
+  "version": "1.0.0",
+  "description": "Hardware-independent pump timing, watchdog and fallback logic (unit-tested on the laptop)",
+  "frameworks": "*",
+  "platforms": "*"
+}

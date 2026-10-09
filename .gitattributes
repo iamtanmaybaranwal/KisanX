@@ -1,0 +1,2 @@
+# shell scripts run on the Raspberry Pi: always Linux line endings
+*.sh text eol=lf

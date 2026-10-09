@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: jaldrishti-ml
+Version: 1.0.0
+Summary: Jal-Drishti edge-AI soil-moisture forecasting
+Requires-Python: >=3.11
+Requires-Dist: numpy==2.4.2
+Requires-Dist: pandas==2.3.3
+Requires-Dist: scikit-learn==1.8.0
+Requires-Dist: joblib==1.6.0

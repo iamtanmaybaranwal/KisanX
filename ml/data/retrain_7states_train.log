@@ -1,0 +1,63 @@
+rows: train=3,626,558 valid=405,265 test=1,227,324
+  horizon  1h: 440 rounds (leave-one-state-out), 658s
+  horizon  3h: 360 rounds (leave-one-state-out), 891s
+  horizon  6h: 280 rounds (leave-one-state-out), 447s
+  horizon 12h: 230 rounds (leave-one-state-out), 596s
+
+=== VALID (later period, known cities): MAE in moisture %-points (lower is better) ===
+ horizon        model  persistence        trend      physics
+      1h        0.321        0.484        0.633        0.527
+      3h        0.538        0.994        1.459        1.024
+      6h        0.787        1.574        2.623        1.528
+     12h        1.136        2.393        4.669        2.155
+  'will need water within 6h' F1:  model=0.773  persistence=0.000  trend=0.316  physics=0.677   (events=4053)
+
+=== TEST (7 unseen cities, one per state): MAE in moisture %-points (lower is better) ===
+ horizon        model  persistence        trend      physics
+      1h        0.282        0.418        0.566        0.461
+      3h        0.460        0.824        1.279        0.867
+      6h        0.675        1.330        2.327        1.300
+     12h        1.019        2.121        4.188        1.882
+  'will need water within 6h' F1:  model=0.786  persistence=0.000  trend=0.379  physics=0.710   (events=18982)
+
+  Per state (unseen city, 6 h ahead):  MAE model / physics | need-water F1 model / physics
+    Bihar          (muzaffarpur)  0.638 / 1.294   |   0.809 / 0.687
+    Delhi          (narela     )  0.635 / 1.149   |   0.780 / 0.695
+    Haryana        (rohtak     )  0.554 / 0.997   |   0.785 / 0.726
+    Jharkhand      (hazaribagh )  0.755 / 1.515   |   0.742 / 0.707
+    Maharashtra    (solapur    )  0.726 / 1.471   |   0.820 / 0.655
+    Punjab         (amritsar   )  0.680 / 1.233   |   0.759 / 0.687
+    Uttar Pradesh  (varanasi   )  0.740 / 1.443   |   0.806 / 0.801
+
+Top inputs (6 h correction model): phys_delta (0.973), rel_aw (0.369), wp_pct (0.178), d_3h (0.138), hours_since_water (0.131), d_1h (0.113)
+
+Refitting deployment models on all 30 cities ...
+
+Saved D:\Jal-Drishti\ml\models\moisture_model.joblib (1.01 MB) and D:\Jal-Drishti\ml\models\metrics.json
+14 replays per scenario, 21 days each, unseen cities ('amritsar', 'rohtak', 'narela', 'varanasi', 'muzaffarpur', 'hazaribagh', 'solapur')
+                     err_still  err_raw  err_used  learning_gain_%
+scenario    h  week                                               
+field_zone  1  1         0.362    0.265     0.265              0.0
+               2         0.384    0.269     0.269              0.0
+               3         0.381    0.258     0.258              0.0
+            3  1         0.676    0.297     0.297              0.0
+               2         0.716    0.294     0.294              0.0
+               3         0.748    0.287     0.287              0.0
+            6  1         1.179    0.402     0.407             -1.2
+               2         1.258    0.347     0.349             -0.6
+               3         1.323    0.341     0.345             -1.2
+            12 1         2.196    0.586     0.587             -0.2
+               2         2.357    0.395     0.396             -0.3
+               3         2.489    0.363     0.368             -1.4
+indoor_tray 1  1         0.333    0.273     0.273              0.0
+               2         0.352    0.287     0.287              0.0
+               3         0.347    0.267     0.267              0.0
+            3  1         0.564    0.314     0.315             -0.3
+               2         0.590    0.332     0.331              0.3
+               3         0.625    0.311     0.311              0.0
+            6  1         0.966    0.491     0.438             10.8
+               2         1.002    0.483     0.344             28.8
+               3         1.098    0.476     0.311             34.7
+            12 1         1.783    1.064     0.775             27.2
+               2         1.852    1.130     0.382             66.2
+               3         2.078    1.229     0.369             70.0

@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# generated training data (re-create with: python -m jaldrishti_ml.dataset)
+ml/data/dataset.pkl
+node_modules/
+dist/
+# server runtime database
+server/data/
+# PlatformIO build output
+firmware/.pio/
+firmware/.vscode/
+# Wi-Fi password for the ESP32 (template: firmware/include/secrets.example.h)
+firmware/include/secrets.h

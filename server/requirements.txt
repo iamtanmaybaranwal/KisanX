@@ -1,0 +1,8 @@
+-e ../ml
+fastapi==0.118.0
+uvicorn[standard]==0.54.0
+paho-mqtt==2.1.0
+# tests / laptop-only
+httpx
+pytest
+amqtt==0.12.1

@@ -1,0 +1,38 @@
+Generating dataset ...
+  ludhiana     Punjab          175,332 samples  (68.4s)
+  bathinda     Punjab          175,332 samples  (65.1s)
+  patiala      Punjab          175,332 samples  (82.4s)
+  hisar        Haryana         175,332 samples  (69.8s)
+  karnal       Haryana         175,332 samples  (62.3s)
+  sirsa        Haryana         175,332 samples  (66.7s)
+  new_delhi    Delhi           175,332 samples  (66.1s)
+  meerut       Uttar Pradesh   175,332 samples  (58.6s)
+  agra         Uttar Pradesh   175,332 samples  (57.9s)
+  lucknow      Uttar Pradesh   175,332 samples  (67.5s)
+  gorakhpur    Uttar Pradesh   175,332 samples  (65.3s)
+  jhansi       Uttar Pradesh   175,332 samples  (67.6s)
+  patna        Bihar           175,332 samples  (60.8s)
+  gaya         Bihar           175,332 samples  (61.5s)
+  purnia       Bihar           175,332 samples  (66.6s)
+  ranchi       Jharkhand       175,332 samples  (66.2s)
+  jamshedpur   Jharkhand       175,332 samples  (42.8s)
+  dumka        Jharkhand       175,332 samples  (34.7s)
+  pune         Maharashtra     175,332 samples  (32.8s)
+  nashik       Maharashtra     175,332 samples  (33.0s)
+  aurangabad   Maharashtra     175,332 samples  (32.6s)
+  amravati     Maharashtra     175,332 samples  (37.5s)
+  kolhapur     Maharashtra     175,332 samples  (31.6s)
+  amritsar     Punjab          175,332 samples  (31.0s)
+  rohtak       Haryana         175,332 samples  (37.2s)
+  narela       Delhi           175,332 samples  (37.3s)
+  varanasi     Uttar Pradesh   175,332 samples  (36.5s)
+  muzaffarpur  Bihar           175,332 samples  (56.9s)
+  hazaribagh   Jharkhand       175,332 samples  (32.1s)
+  solapur      Maharashtra     175,332 samples  (33.3s)
+split
+train    3626558
+test     1227324
+valid     405265
+Saved 5,259,147 rows -> D:\Jal-Drishti\ml\data\dataset.pkl
+rows: train=3,626,558 valid=405,265 test=1,227,324
+  horizon  1h: 440 rounds (leave-one-state-out), 561s

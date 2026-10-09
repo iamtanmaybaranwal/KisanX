@@ -1,0 +1,12 @@
+{
+  "name": "Jal-Drishti - Smart Irrigation",
+  "short_name": "Jal-Drishti",
+  "description": "AI-powered precision irrigation, fully local on the farm",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f7f7",
+  "theme_color": "#171717",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

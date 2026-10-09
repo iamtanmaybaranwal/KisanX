@@ -1,0 +1,88 @@
+Generating dataset ...
+  ludhiana     Punjab          153,352 samples  (16.2s)
+  bathinda     Punjab          153,352 samples  (16.3s)
+  patiala      Punjab          153,352 samples  (18.0s)
+  hisar        Haryana         153,352 samples  (16.8s)
+  karnal       Haryana         153,352 samples  (16.7s)
+  sirsa        Haryana         153,352 samples  (16.9s)
+  new_delhi    Delhi           153,352 samples  (131.0s)
+  meerut       Uttar Pradesh   153,352 samples  (14.3s)
+  agra         Uttar Pradesh   153,352 samples  (14.1s)
+  lucknow      Uttar Pradesh   153,352 samples  (13.3s)
+  gorakhpur    Uttar Pradesh   153,352 samples  (15.8s)
+  jhansi       Uttar Pradesh   153,352 samples  (12.8s)
+  patna        Bihar           153,352 samples  (12.6s)
+  gaya         Bihar           153,352 samples  (14.4s)
+  purnia       Bihar           153,352 samples  (13.2s)
+  amritsar     Punjab          153,352 samples  (12.8s)
+  rohtak       Haryana         153,352 samples  (16.2s)
+  narela       Delhi           153,352 samples  (55.8s)
+  varanasi     Uttar Pradesh   153,352 samples  (14.3s)
+  muzaffarpur  Bihar           153,352 samples  (13.6s)
+split
+train    1914180
+test      766760
+valid     385316
+Saved 3,066,256 rows -> D:\Jal-Drishti\ml\data\dataset.pkl
+rows: train=1,914,180 valid=385,316 test=766,760
+  horizon  1h: 200 rounds (leave-one-state-out), 160s
+  horizon  3h: 280 rounds (leave-one-state-out), 157s
+  horizon  6h: 200 rounds (leave-one-state-out), 153s
+  horizon 12h: 160 rounds (leave-one-state-out), 155s
+
+=== VALID (later period, known cities): MAE in moisture %-points (lower is better) ===
+ horizon        model  persistence        trend      physics
+      1h        0.314        0.472        0.625        0.541
+      3h        0.517        0.960        1.452        1.047
+      6h        0.754        1.520        2.620        1.542
+     12h        1.098        2.311        4.628        2.152
+  'will need water within 6h' F1:  model=0.783  persistence=0.000  trend=0.327  physics=0.671   (events=4727)
+
+=== TEST (5 unseen cities, one per state): MAE in moisture %-points (lower is better) ===
+ horizon        model  persistence        trend      physics
+      1h        0.285        0.429        0.587        0.430
+      3h        0.464        0.866        1.346        0.786
+      6h        0.693        1.406        2.466        1.188
+     12h        1.057        2.245        4.466        1.752
+  'will need water within 6h' F1:  model=0.783  persistence=0.000  trend=0.390  physics=0.709   (events=13938)
+
+  Per state (unseen city, 6 h ahead):  MAE model / physics | need-water F1 model / physics
+    Bihar          (muzaffarpur)  0.769 / 1.386   |   0.737 / 0.694
+    Delhi          (narela     )  0.644 / 1.107   |   0.772 / 0.660
+    Haryana        (rohtak     )  0.590 / 1.094   |   0.816 / 0.736
+    Punjab         (amritsar   )  0.731 / 1.207   |   0.810 / 0.719
+    Uttar Pradesh  (varanasi   )  0.733 / 1.145   |   0.766 / 0.729
+
+Top inputs (6 h correction model): phys_delta (1.059), rel_aw (0.326), wp_pct (0.137), d_3h (0.133), d_1h (0.093), hours_since_water (0.091)
+
+Refitting deployment models on all 20 cities ...
+
+Saved D:\Jal-Drishti\ml\models\moisture_model.joblib (0.65 MB) and D:\Jal-Drishti\ml\models\metrics.json
+10 replays per scenario, 21 days each, unseen cities ('amritsar', 'rohtak', 'narela', 'varanasi', 'muzaffarpur')
+                     err_still  err_raw  err_used  learning_gain_%
+scenario    h  week                                               
+field_zone  1  1         0.356    0.267     0.267              0.0
+               2         0.381    0.269     0.269              0.0
+               3         0.372    0.261     0.261              0.0
+            3  1         0.649    0.290     0.290              0.0
+               2         0.688    0.288     0.288              0.0
+               3         0.707    0.282     0.282              0.0
+            6  1         1.121    0.389     0.391             -0.5
+               2         1.188    0.331     0.334             -0.9
+               3         1.224    0.328     0.331             -0.9
+            12 1         2.062    0.580     0.581             -0.2
+               2         2.195    0.403     0.403              0.0
+               3         2.257    0.380     0.388             -2.1
+indoor_tray 1  1         0.328    0.294     0.293              0.3
+               2         0.349    0.295     0.294              0.3
+               3         0.340    0.280     0.277              1.1
+            3  1         0.535    0.374     0.339              9.4
+               2         0.571    0.380     0.311             18.2
+               3         0.585    0.367     0.293             20.2
+            6  1         0.888    0.687     0.540             21.4
+               2         0.959    0.661     0.324             51.0
+               3         0.995    0.635     0.294             53.7
+            12 1         1.609    1.281     0.957             25.3
+               2         1.771    1.280     0.360             71.9
+               3         1.858    1.246     0.343             72.5
+EXIT 0
